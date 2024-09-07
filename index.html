@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>てすてす</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsMGQ2YJBW_pT1HnvMwjqaVLJUBZZTV_s"></script>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        #info {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>てすとだ</h1>
+    <div id="map"></div>
+    <div id="info">ここに情報が表示されます。</div>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: {lat: 35.681236, lng: 139.767125}  // 初期位置を東京に設定
+            });
+
+            var locations = [
+
+                {
+                    url: "リンク",
+                    title: "タイトル",
+                    lat: 0,
+                    lng: 0,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13207/ILSP0060882948_ipclm/",
+                    title: "松原町コミュニティセンター",
+                    lat: 35.7121036,
+                    lng: 139.3570727,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13207/21331874349/",
+                    title: "昭島市立　松原町高齢者福祉センター",
+                    lat: 35.7146658,
+                    lng: 139.3544556,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13207/ILSP0060892556_ipclm/",
+                    title: "昭島市公民館",
+                    lat: 35.7059102,
+                    lng: 139.3540161,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13207/21330796333/",
+                    title: "昭島市立　市民会館・ＫＯＴＯＲＩホール",
+                    lat: 35.7134316,
+                    lng: 139.3661483,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13207/21331925211/",
+                    title: "昭島市立　朝日町高齢者福祉センター",
+                    lat: 35.7061888,
+                    lng: 139.3706042,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13207/21330796984/",
+                    title: "拝島三丁目アパート集会室",
+                    lat: 35.711551,
+                    lng: 139.334322,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13207/ILSP0060909632_ipclm/",
+                    title: "福島町公民館",
+                    lat: 36.457509,
+                    lng: 136.468673,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "東京都あきる野市の公民館一覧",
+                    title: "",
+                    lat: 0,
+                    lng: 0,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "リンク",
+                    title: "タイトル",
+                    lat: 0,
+                    lng: 0,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13228/21331125959/",
+                    title: "あきる野市　中央公民館",
+                    lat: 35.73006580000001,
+                    lng: 139.3023533,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13228/ILSP0060896660_ipclm/",
+                    title: "中央公民館",
+                    lat: 0,
+                    lng: 0,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13228/21330872473/",
+                    title: "瀬戸岡会館",
+                    lat: 35.7382295,
+                    lng: 139.2925999,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13228/21330871652/",
+                    title: "牛沼会館",
+                    lat: 35.7192993,
+                    lng: 139.2854087,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                },
+        
+                {
+                    url: "https://www.mapion.co.jp/phonebook/M13007/13228/ILSP0060910533_ipclm/",
+                    title: "城山荘公民館",
+                    lat: 35.72906529999999,
+                    lng: 139.2000813,
+                    address: "データ入力待ち",
+                    phone: "データ入力待ち"
+                }
+        
+            ];
+
+            locations.forEach(function(location) {
+                console.log('Adding marker:', location);
+                var marker = new google.maps.Marker({
+                    position: {lat: location.lat, lng: location.lng},
+                    map: map,
+                    title: location.title
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: `<div>
+                                <strong>${location.title}</strong><br>
+                                <a href="${location.url}" target="_blank">ホームページ</a><br>
+                                住所: ${location.address}<br>
+                                電話: ${location.phone}
+                              </div>`
+                });
+
+                marker.addListener('click', function() {
+                    map.setZoom(15);
+                    map.setCenter(marker.getPosition());
+                    infowindow.open(map, marker);
+                    document.getElementById('info').innerHTML =
+                        `<strong>${location.title}</strong><br>
+                        <a href="${location.url}" target="_blank">ホームページ</a><br>
+                        住所: ${location.address}<br>
+                        電話: ${location.phone}`;
+                });
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+</body>
+</html>
